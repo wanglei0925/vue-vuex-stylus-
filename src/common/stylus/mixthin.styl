@@ -1,0 +1,27 @@
+$baseFontSize = 46.875;
+px2rem(px) {
+  px /$baseFontSize * 1rem;
+}
+
+//1边框像素
+border-1px($color)
+  position: relative
+  &:after
+    display: block
+    position: absolute
+    left: 0
+    bottom: 0
+    width: 100%
+    border-top: 1px solid $color
+    content: ' '
+
+//小图标问题
+bg-image($url)
+  background-image: url($url + '@2x.png')
+  @media (-webkit-min-device-pixel-ratio:3),(min-device-pixel-ratio:3)
+    background-image: url($url + '@3x.png')
+
+//字体定义规范
+$small-font-size = px2rem(28)
+$center-font-size = px2rem(32)
+$big-font-size = px2rem(36)
